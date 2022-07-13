@@ -18,9 +18,12 @@ export default function App() {
       <div>
         <nav>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
+            {
+              ! currentUser &&
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            }
             <li>
               <Link to="/search">Search</Link>
             </li>
@@ -37,10 +40,18 @@ export default function App() {
         </nav>
         <Switch>
           <Route exact path="/watchlist">
-            <WatchListPage />
+            {
+              !currentUser 
+                ? <Redirect to="/"/>
+                : <WatchListPage />
+            }
           </Route>
           <Route exact path="/search">
-            <SearchPage />
+            {
+              !currentUser 
+                ? <Redirect to="/"/>
+                : <SearchPage />
+            }
           </Route>
           <Route exact path="/">
             {
