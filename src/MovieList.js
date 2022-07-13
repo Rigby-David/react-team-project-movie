@@ -1,8 +1,12 @@
 import React from 'react';
-
-export default function MovieList() {
+import Movie from './Movie';
+export default function MovieList({ movies }) {
   return (
-    <div>MovieList</div>
+    <div>
+      MovieList
+      {movies.map((movie, i) => (
+        <Movie key={movie.title + i} movie={movie} />
+      ))}
+    </div>
   );
 }
-

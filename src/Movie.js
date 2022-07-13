@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Movie() {
+export default function Movie({ movie }) {
   return (
-    <div>Movie</div>
+    <div>
+      <h2>{movie.title}</h2>
+      
+    </div>
   );
 }
