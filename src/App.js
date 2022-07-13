@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   Link
 } from 'react-router-dom';
 import HomePage from './HomePage';
@@ -11,7 +12,7 @@ import { logout } from './services/fetch-utils';
 import WatchListPage from './WatchListPage';
 
 export default function App() {
-  const [user, setUser] = useState(localStorage)
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem('supabase.auth.token'));
   return (
     <Router>
       <div>
@@ -26,14 +27,12 @@ export default function App() {
             <li>
               <Link to="/watchlist">Watch List</Link>
             </li>
-            {
-              user 
-              ? <button onClick={logout}>logout</button>
-              : 
+            { 
+              currentUser && 
+              <li> 
+                <button onClick={logout}>logout</button> 
+              </li> 
             }
-            <li>
-              <button onClick={logout}>Logout</button>
-            </li>
           </ul>
         </nav>
         <Switch>
@@ -44,7 +43,11 @@ export default function App() {
             <SearchPage />
           </Route>
           <Route exact path="/">
-            <HomePage />
+            {
+              currentUser 
+                ? <Redirect to="/search"/>
+                : <HomePage setCurrentUser={setCurrentUser} />
+            }
           </Route>
         </Switch>
       </div>
