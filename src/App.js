@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,11 +6,12 @@ import {
   Link
 } from 'react-router-dom';
 import HomePage from './HomePage';
-import Movie from './Movie';
 import SearchPage from './SearchPage';
+import { logout } from './services/fetch-utils';
 import WatchListPage from './WatchListPage';
 
 export default function App() {
+  const [user, setUser] = useState(localStorage)
   return (
     <Router>
       <div>
@@ -24,6 +25,14 @@ export default function App() {
             </li>
             <li>
               <Link to="/watchlist">Watch List</Link>
+            </li>
+            {
+              user 
+              ? <button onClick={logout}>logout</button>
+              : 
+            }
+            <li>
+              <button onClick={logout}>Logout</button>
             </li>
           </ul>
         </nav>
