@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import MovieList from './MovieList';
 import { searchMovies } from './services/fetch-utils';
+import CustomButton from './CustomButton';
 
 export default function SearchPage() {
   const [title, setTitle] = useState('');
   const [movies, setMovies] = useState([]);
+
 
   async function handleSearchMovie() {
     const moviesData = await searchMovies(title);
@@ -15,14 +17,15 @@ export default function SearchPage() {
 
   return (
     <div>
-      This is the SearchPage
+      <h1>Search for Movies!</h1>
       <div>
-        <label>
+        <div className='results-div'>
+          <label>
           search
-          <input onChange={(e) => setTitle(e.target.value)} value={title} />
-        </label>
-        <button onClick={handleSearchMovie}>submit</button>
-
+            <input onChange={(e) => setTitle(e.target.value)} value={title} />
+          </label>
+          <CustomButton onClick={handleSearchMovie}>submit</CustomButton>
+        </div>
         <div>
           Your Results Here:
           <MovieList movies={movies} />

@@ -19,7 +19,7 @@ export async function signInUser(email, password) {
 export async function logout() {
   await client.auth.signOut();
 
-  return (window.location.href = '../');
+  return (window.location.href = '/');
 }
 
 export async function searchMovies(title) {

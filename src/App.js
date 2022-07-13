@@ -10,6 +10,8 @@ import HomePage from './HomePage';
 import SearchPage from './SearchPage';
 import { logout } from './services/fetch-utils';
 import WatchListPage from './WatchListPage';
+import './App.css';
+import CustomButton from './CustomButton';
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('supabase.auth.token'));
@@ -33,7 +35,7 @@ export default function App() {
             { 
               currentUser && 
               <li> 
-                <button onClick={logout}>logout</button> 
+                <CustomButton onClick={logout}>logout</CustomButton> 
               </li> 
             }
           </ul>

@@ -1,5 +1,25 @@
+* {
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
+}
+
+App,
+body,
+html,
+#root {
+  background-color: white;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
 }
 
 .App-logo {
@@ -36,3 +56,42 @@
     transform: rotate(360deg);
   }
 }
+
+.movie-card {
+  width: 300px;
+  min-height: 500px;
+  background-color: lightblue;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.movie-card:hover {
+  border: 2px solid steelblue;
+}
+
+.movie-card img {
+  width: 200px; 
+  border-radius: 5px;
+  
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.search-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 2px solid black;
+}
+
