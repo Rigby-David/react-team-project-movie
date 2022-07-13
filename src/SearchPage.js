@@ -2,33 +2,30 @@ import React, { useState } from 'react';
 import MovieList from './MovieList';
 import { searchMovies } from './services/fetch-utils';
 
-
 export default function SearchPage() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [title, setTitle] = useState('');
   const [movies, setMovies] = useState([]);
 
-  async function handleSearchMovie(title){
+  async function handleSearchMovie() {
     const moviesData = await searchMovies(title);
-    
+
     setMovies(moviesData);
   }
   console.log(movies);
 
-
   return (
-    <div>This is the SearchPage
+    <div>
+      This is the SearchPage
       <div>
-        <form onSubmit={handleSearchMovie}>
-          <label>
-            search
-            <input 
-              onChange={(e) => setSearchQuery(e.target.value)} 
-              value={searchQuery}/>
-          </label>
-          <button>submit</button>
-        </form>
-        <div>Your Results Here:
-          <MovieList movies={movies}/>
+        <label>
+          search
+          <input onChange={(e) => setTitle(e.target.value)} value={title} />
+        </label>
+        <button onClick={handleSearchMovie}>submit</button>
+
+        <div>
+          Your Results Here:
+          <MovieList movies={movies} />
         </div>
       </div>
     </div>
