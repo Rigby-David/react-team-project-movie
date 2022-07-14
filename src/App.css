@@ -1,16 +1,18 @@
 * {
   cursor: pointer;
+    color: white;
 }
 
 .App {
   text-align: center;
+
 }
 
 App,
 body,
 html,
 #root {
-  background-color: white;
+  background-color: #29566f;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -78,7 +80,12 @@ li {
 .movie-card img {
   width: 200px; 
   border-radius: 5px;
-  
+  padding: 20px;
+}
+
+.movie-card p {
+  color: black;
+  padding: 20px;
 }
 
 .movie-list {
@@ -95,3 +102,17 @@ li {
   border: 2px solid black;
 }
 
+.input:hover {
+  border: 2px solid white;
+}
+
+.input {
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.511); 
+  margin: 20px;
+}
+
+.results-div h2 {
+  margin: 20px;
+}

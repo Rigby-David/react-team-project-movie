@@ -26,7 +26,7 @@ export async function searchMovies(title) {
   const raw = await fetch(`/.netlify/functions/movie-endpoint?title=${title}`);
   const { results } = await raw.json();
   
-  console.log(results);
+  // console.log(results);
   return results;
 }
 

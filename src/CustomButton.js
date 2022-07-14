@@ -5,7 +5,7 @@ export default function CustomButton({
   onClick,
   children,
   variant = 'outlined',
-  backgroundColor = 'peachpuff',
+  // backgroundColor = 'peachpuff',
   margin = '5px',
   
 }) {
@@ -15,7 +15,7 @@ export default function CustomButton({
       onClick={onClick}
       variant={variant}
       sx={{
-        background: backgroundColor,
+        // background: backgroundColor,
         margin: margin
       }}
 

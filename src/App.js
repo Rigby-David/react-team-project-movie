@@ -11,7 +11,9 @@ import SearchPage from './SearchPage';
 import { logout } from './services/fetch-utils';
 import WatchListPage from './WatchListPage';
 import './App.css';
+//mui components
 import CustomButton from './CustomButton';
+
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('supabase.auth.token'));
