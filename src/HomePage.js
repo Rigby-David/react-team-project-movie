@@ -38,7 +38,7 @@ export default function HomePage({ setCurrentUser }) {
   return (
     <div className="home-page">
       <h1 className="page-title">Create a Free Account</h1>
-      <form onSubmit={handleSignUp}>
+      <form >
         <label>
           {/* we sync up react state with the input. Now, the input always gets it value from react state. Whenever state changes, this input will update
           
@@ -53,10 +53,11 @@ export default function HomePage({ setCurrentUser }) {
         <label>
           <CustomInput 
             value={signUpPassword} 
-            type='password' onChange={e => setSignUpPassword(e.target.value)} 
+            type={'password'} 
+            onChange={e => setSignUpPassword(e.target.value)} 
             label={'password'}/>
         </label>
-        <CustomButton>Sign Up</CustomButton>
+        <CustomButton onClick={handleSignUp}>Sign Up</CustomButton>
       </form>
       <h3>Already A User?</h3>
       <form onSubmit={handleSignIn}>

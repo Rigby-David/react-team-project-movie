@@ -26,7 +26,10 @@ export default function SearchPage() {
       <div>
         <div className='search-div'>
           <label>
-            <CustomInput onChange={(e) => setTitle(e.target.value)} value={title}/>
+            <CustomInput 
+              onChange={(e) => setTitle(e.target.value)} 
+              value={title}
+              label={'your movie here'}/>
           </label>
           <CustomButton onClick={handleSearchMovie}>search</CustomButton>
         </div>

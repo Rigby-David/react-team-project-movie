@@ -8,6 +8,7 @@ export default function CustomInput({
   id = 'filled-basic',
   onChange,
   title,
+  type,
 }) {
   return (
     <TextField 
@@ -17,6 +18,7 @@ export default function CustomInput({
       variant={variant} 
       onChange={onChange}
       value={title}
+      type={type}
     />
   );
 }
