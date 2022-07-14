@@ -1,5 +1,27 @@
+* {
+  cursor: pointer;
+    color: white;
+}
+
 .App {
   text-align: center;
+
+}
+
+App,
+body,
+html,
+#root {
+  background-color: #29566f;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
 }
 
 .App-logo {
@@ -35,4 +57,62 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.movie-card {
+  width: 300px;
+  min-height: 500px;
+  background-color: lightblue;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.movie-card:hover {
+  border: 2px solid steelblue;
+}
+
+.movie-card img {
+  width: 200px; 
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.movie-card p {
+  color: black;
+  padding: 20px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.search-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+.input:hover {
+  border: 2px solid white;
+}
+
+.input {
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.511); 
+  margin: 20px;
+}
+
+.results-div h2 {
+  margin: 20px;
 }
