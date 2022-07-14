@@ -7,7 +7,7 @@ import CustomButton from './CustomButton';
 import CustomInput from './CustomInput';
 
 export default function SearchPage() {
-  const [title, setTitle] = useState('m');
+  const [title, setTitle] = useState('l');
   const [movies, setMovies] = useState([]);
 
 
@@ -21,7 +21,7 @@ export default function SearchPage() {
   }, []); //eslint-disable-line
 
   return (
-    <div>
+    <div className="search-page">
       <h1 className="page-title">Search for Movies</h1>
       <div>
         <div className='search-div'>

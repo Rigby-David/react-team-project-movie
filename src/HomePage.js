@@ -70,7 +70,7 @@ export default function HomePage({ setCurrentUser }) {
         <label>
           <CustomInput 
             value={signInPassword} 
-            type='password' 
+            type={'password'} 
             onChange={e => setSignInPassword(e.target.value)} 
             label={'password'}/>
         </label>

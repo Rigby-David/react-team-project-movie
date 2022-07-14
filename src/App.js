@@ -6,6 +6,7 @@ import {
   Redirect,
   Link
 } from 'react-router-dom';
+
 import HomePage from './HomePage';
 import SearchPage from './SearchPage';
 import { logout } from './services/fetch-utils';
