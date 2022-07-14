@@ -1,7 +1,10 @@
 import React from 'react';
 
 export default function WatchListPage() {
+
   return (
-    <div>WatchListPage</div>
+    <div>
+      <h1 className="page-title">Watchlist</h1>
+    </div>
   );
 }

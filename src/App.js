@@ -11,6 +11,7 @@ import SearchPage from './SearchPage';
 import { logout } from './services/fetch-utils';
 import WatchListPage from './WatchListPage';
 import './App.css';
+
 //mui components
 import CustomButton from './CustomButton';
 
@@ -21,26 +22,20 @@ export default function App() {
     <Router>
       <div>
         <nav>
-          <ul>
-            {
-              ! currentUser &&
-              <li>
+          {
+            ! currentUser &&
                 <Link to="/">Home</Link>
-              </li>
-            }
-            <li>
-              <Link to="/search">Search</Link>
-            </li>
-            <li>
-              <Link to="/watchlist">Watch List</Link>
-            </li>
-            { 
-              currentUser && 
-              <li> 
+          }
+          <Link to="/search">
+            <CustomButton>Search</CustomButton>
+          </Link>
+          <Link to="/watchlist">
+            <CustomButton>Watch List</CustomButton>
+          </Link>
+          { 
+            currentUser && 
                 <CustomButton onClick={logout}>logout</CustomButton> 
-              </li> 
-            }
-          </ul>
+          }
         </nav>
         <Switch>
           <Route exact path="/watchlist">

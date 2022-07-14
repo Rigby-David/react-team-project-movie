@@ -30,6 +30,7 @@ export async function searchMovies(title) {
   return results;
 }
 
+
 // export async function addToWatchlist(favorite) {
 //   const { body } = await client
 //     .from('favorite_films')

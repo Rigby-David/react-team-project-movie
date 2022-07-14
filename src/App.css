@@ -24,6 +24,9 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
 
 .movie-card {
   width: 300px;
@@ -38,7 +41,7 @@ li {
   flex-direction: column;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid rgb(19, 47, 76);;
+  border: 1px solid rgb(37, 56, 76);
 }
 
 .movie-card img {
@@ -60,14 +63,14 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .search-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 2px solid black;
+  width: 100vw;
+  margin: 20px;
 }
 
 .input:hover {
@@ -76,11 +79,18 @@ li {
 
 .input {
   border-radius: 5px;
-  color: white;
-  background-color: rgba(255, 255, 255, 0.511); 
-  margin: 20px;
+  background-color: rgb(224, 227, 231);
 }
 
-.results-div h2 {
+.page-title {
+  color: rgb(0, 127, 255);
+  font-size: 3rem;
+}
+
+.results {
+  color: rgb(224, 227, 231);
+  border-radius: 5px;
+  padding: 20px;
   margin: 20px;
+  border: 1px solid rgb(37, 56, 76)
 }
