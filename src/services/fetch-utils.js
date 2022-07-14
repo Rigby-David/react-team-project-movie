@@ -39,7 +39,7 @@ export async function searchMovies(title) {
 // }
 
 
-// export async function deleteFavorite(id) {
+// export async function deleteFrom Watchlist(id) {
 //   const { body } = await client
 //     .from('favorite_films')
 //     .delete()

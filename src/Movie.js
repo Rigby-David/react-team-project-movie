@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import FavoriteButton from './FavoriteButton';
-// import CustomButton from './CustomButton';
+import CustomButton from './CustomButton';
 
 
 export default function Movie({ movie }) {
@@ -9,7 +8,11 @@ export default function Movie({ movie }) {
   return (
     <div className='movie-card'>
       <h2>{movie.title}</h2>
-      <FavoriteButton onClick={() => setIsFavorited(isFavorited)}/>
+      {
+        isFavorited
+          ? <CustomButton onClick={() => setIsFavorited(isFavorited)}>❤️ remove from watchlist</CustomButton>
+          : <CustomButton>🤍 add to watchlist</CustomButton>
+      }
       <img src={movie.poster_path ? `https://image.tmdb.org/t/p/original${movie.poster_path}` : 'https://www.placebear.com/200/300'} />
       <p>{movie.overview}</p>
     </div>
@@ -17,10 +20,7 @@ export default function Movie({ movie }) {
 }
 
 //could use the mui import 
-// {
-//   isFavorited
-//     ? <CustomButton>❤️ remove from favorites</CustomButton>
-//     : <CustomButton>🤍 add to favorites</CustomButton>
-// }
 
-{/* <button onClick={() => setIsOpen(!isOpen)}>Gandalf says</button> */}
+// handleFavoriteButtonClick will 
+// // change the state to isFavorited
+// // send the data to the watchlist table in supabase 

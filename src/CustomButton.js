@@ -4,14 +4,13 @@ import Button from '@mui/material/Button';
 export default function CustomButton({ 
   onClick,
   children,
-  variant = 'outlined',
-  // backgroundColor = 'peachpuff',
+  variant = 'contained',
   margin = '5px',
-  
+  className = 'custom-button',
 }) {
   return (
     <Button 
-      className='custom-button'
+      className={className}
       onClick={onClick}
       variant={variant}
       sx={{
