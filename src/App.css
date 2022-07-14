@@ -73,6 +73,11 @@ a {
   margin: 20px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .input:hover {
   border: 2px solid white;
 }
@@ -83,7 +88,7 @@ a {
 }
 
 .page-title {
-  color: rgb(0, 127, 255);
+  color: goldenrod;
   font-size: 3rem;
 }
 

@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 
 export default function CustomInput({
   variant = 'filled',
-  label = 'your movie here',
+  label,
   id = 'filled-basic',
   onChange,
   title,

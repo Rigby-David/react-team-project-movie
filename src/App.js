@@ -24,7 +24,9 @@ export default function App() {
         <nav>
           {
             ! currentUser &&
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <CustomButton>Home</CustomButton>
+                </Link>
           }
           <Link to="/search">
             <CustomButton>Search</CustomButton>

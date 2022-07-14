@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { signInUser, signupUser } from './services/fetch-utils';
 
+import CustomButton from './CustomButton';
+import CustomInput from './CustomInput';
+
 export default function HomePage({ setCurrentUser }) {
 // what state do i need to maintain?
   const [signUpEmail, setSignUpEmail] = useState('');
@@ -34,34 +37,43 @@ export default function HomePage({ setCurrentUser }) {
 
   return (
     <div className="home-page">
-      Sign Up
+      <h1 className="page-title">Create a Free Account</h1>
       <form onSubmit={handleSignUp}>
         <label>
-          Email
           {/* we sync up react state with the input. Now, the input always gets it value from react state. Whenever state changes, this input will update
           
           The benefit: whenever state changes, this input will update--NO MATTER HOW THAT STATE CHANGED.
           */}
           {/* controlled input */}
-          <input value={signUpEmail} onChange={e => setSignUpEmail(e.target.value)} />
+          <CustomInput 
+            value={signUpEmail} 
+            onChange={e => setSignUpEmail(e.target.value)} 
+            label={'email'}/>
         </label>
         <label>
-          Password
-          <input value={signUpPassword} type='password' onChange={e => setSignUpPassword(e.target.value)} />
+          <CustomInput 
+            value={signUpPassword} 
+            type='password' onChange={e => setSignUpPassword(e.target.value)} 
+            label={'password'}/>
         </label>
-        <button>Sign Up</button>
+        <CustomButton>Sign Up</CustomButton>
       </form>
-      Sign In
+      <h3>Already A User?</h3>
       <form onSubmit={handleSignIn}>
         <label>
-          Email
-          <input value={signInEmail} onChange={e => setSignInEmail(e.target.value)} />
+          <CustomInput 
+            value={signInEmail} 
+            onChange={e => setSignInEmail(e.target.value)} 
+            label={'email'}/>
         </label>
         <label>
-          Password
-          <input value={signInPassword} type='password' onChange={e => setSignInPassword(e.target.value)} />
+          <CustomInput 
+            value={signInPassword} 
+            type='password' 
+            onChange={e => setSignInPassword(e.target.value)} 
+            label={'password'}/>
         </label>
-        <button>Sign In</button>
+        <CustomButton>Sign In</CustomButton>
       </form>
     </div>
   );
