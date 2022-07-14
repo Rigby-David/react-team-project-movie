@@ -30,4 +30,22 @@ export async function searchMovies(title) {
   return results;
 }
 
+// export async function addToWatchlist(favorite) {
+//   const { body } = await client
+//     .from('favorite_films')
+//     .insert(favorite);
+    
+//   return body;
+// }
+
+
+// export async function deleteFavorite(id) {
+//   const { body } = await client
+//     .from('favorite_films')
+//     .delete()
+//     .match({ id })
+//     .single();
+      
+//   return body;
+// }
 
