@@ -5,15 +5,19 @@ import { searchMovies } from './services/fetch-utils';
 
 import CustomButton from './CustomButton';
 import CustomInput from './CustomInput';
+import LoadingIcon from './LoadingIcon';
 
 export default function SearchPage() {
   const [title, setTitle] = useState('l');
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
 
   async function handleSearchMovie() {
+    setIsLoading(true);
     const moviesData = await searchMovies(title);
     setMovies(moviesData);
+    setIsLoading(false);
   }
 
   useEffect((e) => {
@@ -35,7 +39,16 @@ export default function SearchPage() {
         </div>
         <div className="results">
           <h2>Search Results:</h2>
-          <MovieList movies={movies}/>
+          
+          {
+            isLoading
+              ? <LoadingIcon 
+                style=
+                  {{
+                    transitionDelay: isLoading ? '4s' : '4s',
+                  }}/>
+              : <MovieList movies={movies}/>
+          }
         </div>
       </div>
     </div>
