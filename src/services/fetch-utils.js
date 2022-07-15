@@ -22,6 +22,7 @@ export async function logout() {
   return (window.location.href = '/');
 }
 
+//gets all movies from API 
 export async function searchMovies(title) {
   const raw = await fetch(`/.netlify/functions/movie-endpoint?title=${title}`);
   const { results } = await raw.json();
@@ -30,23 +31,10 @@ export async function searchMovies(title) {
   return results;
 }
 
+//adds movie to watchlist table 
 
-// export async function addToWatchlist(favorite) {
-//   const { body } = await client
-//     .from('favorite_films')
-//     .insert(favorite);
-    
-//   return body;
-// }
+//gets all movies from WatchList
 
+//deletes movie from watchlist table
 
-// export async function deleteFrom Watchlist(id) {
-//   const { body } = await client
-//     .from('favorite_films')
-//     .delete()
-//     .match({ id })
-//     .single();
-      
-//   return body;
-// }
 
